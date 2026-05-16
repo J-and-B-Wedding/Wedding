@@ -16,7 +16,7 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 
 /* COUNTDOWN TIMER */
-const weddingDate = new Date("May 17, 2026 00:00:00").getTime();
+const weddingDate = new Date("May 16, 2026 00:00:00").getTime();
 const countdownEl = document.querySelector(".countdown");
 const finishedEl = document.querySelector(".countdown-finished");
 
