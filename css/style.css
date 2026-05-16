@@ -106,6 +106,27 @@
    color: var(--deep-blue);
  }
 
+ /* Animation Base CSS */
+ .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: none;
+}
+
+.details-card,
+.faq-card,
+.entourage-card,
+.img-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-card:hover,
+.faq-card:hover,
+.entourage-card:hover,
+.img-box:hover {
+  transform: translateY(-6px);
+}
+
  /* NAVBAR */
  .navbar {
    position: sticky;
