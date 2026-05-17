@@ -115,11 +115,37 @@
    scroll-margin-top: 50px;
  }
 
+ #story,
+ #details,
+ #schedule,
+ #rsvp,
+ #faq,
+ #gallery,
+ #spotify,
+ #entourage {
+   scroll-margin-top: 100px;
+ }
+
  @media (max-width:575.98px) {
 
    #home {
      scroll-margin-top: 40px;
    }
+
+   #story,
+   #details,
+   #schedule,
+   #rsvp,
+   #faq,
+   #gallery,
+   #spotify,
+   #entourage {
+     scroll-margin-top: 90px;
+   }
+ }
+
+  .no-margin-scroll {
+  scroll-margin-top: 0px !important;
  }
 
  /* Animation Base CSS */
@@ -429,9 +455,9 @@
 
  @media (max-width: 1070px) {
    .menu-toggle {
-    display: block;
-    margin-left: auto;
-  }
+     display: block;
+     margin-left: auto;
+   }
 
    .nav-links {
      position: absolute;

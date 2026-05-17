@@ -1,17 +1,3 @@
- /* Always start on top*/
-if("scrollRestoration" in history) {
-  history.scrollRestoration = "manual";
-}
-
-window.addEventListener("beforeunload", () => {
-  window.scrollTo(0, 0);
-});
-
-window.addEventListener("load", () => {
-  window.scrollTo(0, 0);
-});
-
-
 /* Run on DOMContentLoaded*/
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -37,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       //natigate to the page section
       const targetId = link.getAttribute('href');
       const target = document.querySelector(targetId);
-      if (!target) return;
+      if(!target) return;
 
       target.scrollIntoView({
         behavior: 'smooth',
