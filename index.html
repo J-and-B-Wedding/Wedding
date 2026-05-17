@@ -134,20 +134,22 @@
         </p>
 
         <div class="details-grid">
-          <!-- Ceremony -->
 
+          <!-- Ceremony -->
           <div class="details-card">
             <div class="details-image image-frame">
               <img
-                src="images/ceremony_venue.jpg"
+                src=""
                 alt="Wedding Ceremony Venue"
+                data-content="ceremony-image"
               />
 
               <!-- Ceremony QR -->
               <div class="details-qr">
                 <img
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.google.com/maps?q=6.116338,125.171833"
+                  src=""
                   alt="Ceremony QR Code"
+                  data-content="ceremony-qr"
                 />
               </div>
             </div>
@@ -155,32 +157,33 @@
             <div class="details-content">
               <span class="details-label"> Wedding Ceremony </span>
 
-              <h3>St. Mary Church</h3>
+              <h3 data-content="ceremony-venue"></h3>
 
               <div class="details-meta">
                 <div class="details-item">
                   <strong>Date</strong>
 
-                  <span> June 21, 2026 </span>
+                  <span data-content="ceremony-date"></span>
                 </div>
 
                 <div class="details-item">
                   <strong>Time</strong>
 
-                  <span> 2:00 PM </span>
+                  <span data-content="ceremony-time"></span>
                 </div>
 
                 <div class="details-item">
                   <strong>Location</strong>
 
-                  <span> 123 Church Street, City Name </span>
+                  <span data-content="ceremony-location"></span>
                 </div>
               </div>
 
               <a
-                href="https://www.google.com/maps?q=6.116338,125.171833"
+                href=""
                 target="_blank"
                 class="btn"
+                data-content="ceremony-map"
               >
                 Open in Google Maps
               </a>
@@ -191,15 +194,17 @@
           <div class="details-card">
             <div class="details-image image-frame">
               <img
-                src="images/reception_venue.jpg"
+                src=""
                 alt="Wedding Reception Venue"
+                data-content="reception-image"
               />
 
               <!-- Reception QR -->
               <div class="details-qr">
                 <img
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.google.com/maps?q=6.116338,125.171833"
+                  src=""
                   alt="Reception QR Code"
+                  data-content="reception-qr"
                 />
               </div>
             </div>
@@ -207,32 +212,33 @@
             <div class="details-content">
               <span class="details-label"> Wedding Reception </span>
 
-              <h3>Sunset Garden Hall</h3>
+              <h3 data-content="reception-venue"></h3>
 
               <div class="details-meta">
                 <div class="details-item">
                   <strong>Date</strong>
 
-                  <span> June 21, 2026 </span>
+                  <span data-content="reception-date"></span>
                 </div>
 
                 <div class="details-item">
                   <strong>Time</strong>
 
-                  <span> 6:00 PM </span>
+                  <span data-content="reception-time"></span>
                 </div>
 
                 <div class="details-item">
                   <strong>Location</strong>
 
-                  <span> Sunset Avenue, City Name </span>
+                  <span data-content="reception-location"></span>
                 </div>
               </div>
 
               <a
-                href="https://www.google.com/maps?q=6.116338,125.171833"
+                href=""
                 target="_blank"
                 class="btn"
+                data-content="reception-map"
               >
                 Open in Google Maps
               </a>
@@ -259,19 +265,21 @@
 
         <div class="map-content">
           <!-- CEREMONY MAP WRAPPER -->
-          <div id="ceremony-map" class="map-wrapper active-map">
+          <div class="map-wrapper active-map">
             <iframe
-              src="https://www.google.com/maps?q=6.116338,125.171833&z=16&output=embed"
+              src=""
               allowfullscreen
+              data-content="ceremony-map-embed"
             >
             </iframe>
           </div>
 
           <!-- RECEPTION MAP WRAPPER -->
-          <div id="reception-map" class="map-wrapper">
+          <div class="map-wrapper">
             <iframe
-              src="https://www.google.com/maps?q=6.116338,125.171833&z=16&output=embed"
+              src=""
               allowfullscreen
+              data-content="reception-map-embed"
             >
             </iframe>
           </div>
@@ -341,10 +349,11 @@
 
         <div class="rsvp-box">
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSc9ATJkeAfj_9muuz_s1b9JZVRHB2_jHWWKB6VS6pWGv3BEcg/viewform?embedded=true"
+            src=""
             width="100%"
             height="650"
             frameborder="0"
+            data-content="rsvp-form"
           >
           </iframe>
         </div>
@@ -420,48 +429,16 @@
           <h2>Photo Gallery</h2>
         </div>
 
-        <div class="gallery">
-          <div class="img-box image-frame">
+        <div class="gallery" data-content="gallery-container">
+
+          <!-- Template -->
+          <!-- <div class="img-box image-frame">
             <img
               src="images/gallery/photo_1.jpg"
               alt=""
             />
-          </div>
+          </div> -->
 
-          <div class="img-box image-frame">
-            <img
-              src="images/gallery/photo_2.jpg"
-              alt=""
-            />
-          </div>
-
-          <div class="img-box image-frame">
-            <img
-              src="images/gallery/photo_3.jpg"
-              alt=""
-            />
-          </div>
-
-          <div class="img-box image-frame">
-            <img
-              src="images/gallery/photo_4.jpg"
-              alt=""
-            />
-          </div>
-
-          <div class="img-box image-frame">
-            <img
-              src="images/gallery/photo_5.jpg"
-              alt=""
-            />
-          </div>
-
-          <div class="img-box image-frame">
-            <img
-              src="images/gallery/photo_6.jpg"
-              alt=""
-            />
-          </div>
         </div>
 
         <!-- Social Share -->
@@ -488,41 +465,41 @@
               tagging your posts using our official wedding hashtag.
             </p>
 
-            <div class="hashtag">#ForeverWithPersonAAndPersonB</div>
+            <div class="hashtag" data-content="official-hashtag">#</div>
 
             <div class="social-icons">
               <a
-                id="instagram-social"
                 href="https://www.instagram.com"
                 target="_blank"
                 aria-label="Instagram"
+                data-content="social-instagram"
               >
                 <img src="assets/icons/instagram.svg" alt="instagram icon" />
               </a>
 
               <a
-                id="facebook-social"
                 href="https://www.facebook.com"
                 target="_blank"
                 aria-label="Facebook"
+                data-content="social-facebook"
               >
                 <img src="assets/icons/facebook.svg" alt="facebook icon" />
               </a>
 
               <a
-                id="x-social"
                 href="https://www.x.com"
                 target="_blank"
                 aria-label="X"
+                data-content="social-x"
               >
                 <img src="assets/icons/x-twitter.svg" alt="xsocial icon" />
               </a>
 
               <a
-                id="tiktok-social"
                 href="https://www.tiktok.com"
                 target="_blank"
                 aria-label="TikTok"
+                data-content="social-tiktok"
               >
                 <img src="assets/icons/tiktok.svg" alt="tiktok icon" />
               </a>
@@ -559,9 +536,10 @@
             </p>
 
             <a
-              href="https://open.spotify.com/playlist/54ZA9LXFvvFujmOVWXpHga"
+              href=""
               target="_blank"
-              class="spotify-btn"
+              class="spotify-btn" 
+              data-content="spotify-playlist-link"
             >
               Open in Spotify
             </a>
@@ -570,7 +548,7 @@
           <!-- RIGHT SIDE EMBED -->
           <div class="spotify-embed">
             <iframe
-              src="https://open.spotify.com/embed/playlist/54ZA9LXFvvFujmOVWXpHga"
+              src=""
               allow="
                 autoplay;
                 clipboard-write;
@@ -578,7 +556,7 @@
                 fullscreen;
                 picture-in-picture;
               "
-              loading="lazy"
+              data-content="spotify-playlist"
             >
             </iframe>
           </div>
@@ -764,14 +742,16 @@
       </div>
     </footer>
 
+    <!-- Libraries -->
+    <script src="js/libs/gsap.min.js" defer></script>
+    <script src="js/libs/scrollTrigger.min.js" defer></script>
+
     <!-- Main Scripts -->
     <script src="js/content.js" defer></script>
     <script src="js/script.js" defer></script>
     <script src="js/listener.js" defer></script>  
 
     <!-- Animation Scripts -->
-    <script src="js/libs/gsap.min.js" defer></script>
-    <script src="js/libs/scrollTrigger.min.js" defer></script>
     <script src="js/animation.js" defer></script>
   </body>
 </html>

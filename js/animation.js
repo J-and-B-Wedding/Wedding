@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     // Image Zoom-on-Scroll
-    gsap.utils.toArray("img").forEach((img) => {
+    gsap.utils.toArray(".img-box img").forEach((img) => {
         gsap.fromTo(
             img,
             { scale: 1.1 },
