@@ -10,21 +10,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     toggle.setAttribute("aria-expanded", String(isExpanded));
   });
 
-  const pageSections = document.querySelectorAll('.section[id]');
-  const updateNoMarginScroll = () => {
-    const currentScroll = window.scrollY;
+  // const pageSections = document.querySelectorAll('.section[id]');
+  // const updateNoMarginScroll = () => {
+  //   const currentScroll = window.scrollY;
 
-    pageSections.forEach(section => {
-      const sectionTop = section.offsetTop;
+  //   pageSections.forEach(section => {
+  //     const sectionTop = section.offsetTop;
 
-      // no-margin-scroll on section pass the current scroll
-      if(currentScroll > sectionTop) {
-        section.classList.add('no-margin-scroll');
-      } else {
-        section.classList.remove('no-margin-scroll');
-      }
-    });
-  };
+  //     // no-margin-scroll on section pass the current scroll
+  //     if(currentScroll > sectionTop) {
+  //       section.classList.add('no-margin-scroll');
+  //     } else {
+  //       section.classList.remove('no-margin-scroll');
+  //     }
+  //   });
+  // };
 
   /* Navigation Listener */
   document.querySelectorAll(".nav-links a").forEach(link => {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         block: 'start'
       });
 
-      updateNoMarginScroll();
+      // updateNoMarginScroll();
     });
   });
 
@@ -96,15 +96,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
-  // prevent iframe autofocus
-  const iframe = document.querySelectorAll("iframe");
-  iframe.forEach(frame => {
-    frame.addEventListener("load", () => {
-      frame.blur();
-      document.body.focus();
-    })
-  });
-
-  updateNoMarginScroll();
+  // updateNoMarginScroll();
 
 });
