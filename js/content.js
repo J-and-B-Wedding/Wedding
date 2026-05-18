@@ -2,17 +2,17 @@
 /* DOM Content Functions */
 const setContentData = (target, attrib, data) => {
   document.querySelectorAll(`[data-content="${target}"]`)
-  .forEach(element => {
+    .forEach(element => {
 
-    // direct HTML content
-    if(attrib === "innerHTML" || attrib === "textContent" || attrib === "value"){
-      element[attrib] = data;
-      return;
-    }
+      // direct HTML content
+      if (attrib === "innerHTML" || attrib === "textContent" || attrib === "value") {
+        element[attrib] = data;
+        return;
+      }
 
-    // element attribute
-    element.setAttribute(attrib, data);
-  });
+      // element attribute
+      element.setAttribute(attrib, data);
+    });
 }
 
 const preloadImage = (src) => {
@@ -26,29 +26,41 @@ const preloadImage = (src) => {
   });
 };
 
-const loadGalleryImages = async(maxImages) => {
-   const galleryContainer = document.querySelector('[data-content="gallery-container"]');
-  
-  for(let i = 1; i <= maxImages; i++){
+const recacheImages = (currentVersion) => {
+  const allImages = document.querySelectorAll("img");
+  allImages.forEach((img) => {
+    const url = new URL(img.src, window.location.href);
+    url.searchParams.set("v", currentVersion);
+    img.src = url.toString();
+  });
+};
+
+/* Load images in gallery base on max with photo_{num}.jpg format */
+const loadGalleryImages = async (maxImages) => {
+  const galleryContainer = document.querySelector('[data-content="gallery-container"]');
+
+  const promises = [];
+  for (let i = 1; i <= maxImages; i++) {
     const src = `images/gallery/photo_${i}.jpg`;
-    try{
-      await preloadImage(src);
+    promises.push(preloadImage(src));
+  }
+
+  const images = await Promise.allSettled(promises);
+
+  images.forEach((result) => {
+    if (result.status === "fulfilled") {
+      const img = result.value;
+
+      img.alt = "Wedding gallery photo";
+
       const div = document.createElement("div");
       div.className = "img-box image-frame";
-
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = "Wedding gallery photo";
 
       div.appendChild(img);
       galleryContainer.appendChild(div);
     }
-    catch(error){
-      break;
-    }
-  }
-
-}
+  });
+};
 
 const normalizeHashtag = (hashtag) => {
   const cleaned = hashtag.replace(/[^a-zA-Z0-9]/g, "");
@@ -69,7 +81,7 @@ const setWeddingVenue = (type, venue, date, time, location, map) => {
   const encodedMap = encodeURIComponent(map);
 
 
-  if(type === "ceremony"){
+  if (type === "ceremony") {
     setContentData("ceremony-venue", "innerHTML", venue);
     setContentData("ceremony-qr", "src", `${qrAPI}${encodedMap}`);
     setContentData("ceremony-date", "innerHTML", date);
@@ -79,7 +91,7 @@ const setWeddingVenue = (type, venue, date, time, location, map) => {
     setContentData("ceremony-map-embed", "src", `${map}&z=16&output=embed`);
   }
 
-  if(type === "reception"){
+  if (type === "reception") {
     setContentData("reception-venue", "innerHTML", venue);
     setContentData("reception-qr", "src", `${qrAPI}${encodedMap}`);
     setContentData("reception-date", "innerHTML", date);
@@ -108,7 +120,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const ceremoneyLocation = "";
   const receptionLocation = "";
 
-  // preload image
+  // image cache version
+  recacheImages("5182026");
 
   /* Wedding Details */
   setWeddingVenue(
@@ -132,7 +145,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setRsvpForm("https://docs.google.com/forms/d/e/1FAIpQLSddunQoLP03Ui82aRpaxcbs5qL3nsDoKH2Y2cCFVmnOR7QxIQ/viewform?usp=header");
 
   /* Load Photo Gallery */
-  await loadGalleryImages(20);
+  loadGalleryImages(6);
 
   /* Social Media Hashtags */
   setSocialHashtag("ForeverPersonA&PersonB");

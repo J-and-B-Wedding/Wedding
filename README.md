@@ -12,3 +12,7 @@ Website GUIDE
 10. FAQ
 11. Contact Information
 12. Footer
+
+
+Optimize Image
+https://squoosh.app/
