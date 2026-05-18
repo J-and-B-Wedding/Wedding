@@ -466,7 +466,15 @@
    }
 
    .hero h1 {
-     font-size: 1.5rem;
+     font-size: 2.3rem;
+   }
+
+    .hero h2 {
+      font-size: 1rem;
+   }
+
+   .hero p {
+    font-size: 0.8rem;
    }
 
    .time-box {
