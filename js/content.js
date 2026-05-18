@@ -114,7 +114,7 @@ const setSpotifyPlaylist = (playlist) => {
 
 
 /* Run on DOMContentLoaded*/
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", async() => {
 
   //Data
   const ceremoneyLocation = "";
