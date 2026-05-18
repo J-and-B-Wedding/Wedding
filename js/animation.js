@@ -3,7 +3,7 @@ const initAnimation = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // GLOBAL REVEAL ANIMATION
-    gsap.utils.toArray(".story-wrapper, .details-intro, .details-card, .map-toggle, .map-content, .timeline-item, .rsvp-note, .rsvp-box, .faq-card, .reminder-box, .img-box, .gallery-social, .spotify-intro, .spotify-card, .group-heading, .featured-card, .entourage-card, .sponsor-item, .party-column")
+    gsap.utils.toArray(".story-image, .story-text, .details-intro, .details-card, .map-toggle, .map-content, .timeline-item, .rsvp-note, .rsvp-box, .faq-card, .reminder-image, .reminder-content, .img-box, .gallery-social, .spotify-intro, .spotify-card, .group-heading, .featured-card, .entourage-card, .sponsor-item, .party-column")
         .forEach((el) => {
             gsap.fromTo(
                 el,
